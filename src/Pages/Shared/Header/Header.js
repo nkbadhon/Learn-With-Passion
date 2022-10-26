@@ -10,6 +10,7 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Tooltip } from 'react-bootstrap';
+import ToggleButton from 'react-bootstrap/ToggleButton'
 
 const Header = () => {
     const { user, providerLogOut } = useContext(AuthContext);
@@ -22,7 +23,11 @@ const Header = () => {
 
     return (
         <Navbar className='mb-4' collapseOnSelect expand="lg" bg="light" variant="light">
+
             <Container >
+
+
+
                 <Navbar.Brand> <Link style={{ textDecoration: 'none' }} to='/' ><FaStudiovinari></FaStudiovinari> Learn With Passion</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,6 +37,7 @@ const Header = () => {
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>FAQ</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>Blogs</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/registration`}>Registration</Link>
+
                     </Nav>
                     <Nav>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>{
@@ -49,6 +55,7 @@ const Header = () => {
                                 </>
 
                         }</Link>
+
 
                         {['left'].map((placement) => (
                             <OverlayTrigger

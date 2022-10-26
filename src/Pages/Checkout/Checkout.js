@@ -24,6 +24,11 @@ const Checkout = () => {
                 <Card.Text>
                     <h2 className='text-primary px-4'>User Email: {user?.email}</h2>
                 </Card.Text>
+                <Card.Text>
+                    <h2 className='text-primary px-4'>User Name: {user?.displayName}</h2>
+                </Card.Text>
+
+
 
                 <Card.Img className='course_img p-4' variant="top" src={cour.photo_url} />
                 <Card.Body>
