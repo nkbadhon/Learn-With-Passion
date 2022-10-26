@@ -8,6 +8,7 @@ import Left from "../../Pages/Courses/Left-Side/Left";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Login/Login";
 import Registration from "../../Pages/Shared/Registration/Registration";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -39,7 +40,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>
+                element: <PrivetRoute><Checkout></Checkout></PrivetRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
 
             },
             {

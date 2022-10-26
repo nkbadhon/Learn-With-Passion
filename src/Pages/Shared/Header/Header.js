@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import { Tooltip } from 'react-bootstrap';
 
 const Header = () => {
     const { user, providerLogOut } = useContext(AuthContext);
@@ -34,11 +36,11 @@ const Header = () => {
                     <Nav>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>{
                             user?.uid ? <span>
-                                <>
-                                    <span>{user?.displayName}</span>
-                                    <Button variant="info" onClick={handleLogOut}>Logout</Button>
 
-                                </>
+
+                                <Button variant="info" onClick={handleLogOut}>Logout</Button>
+
+
                             </span>
                                 :
                                 <>
@@ -47,17 +49,35 @@ const Header = () => {
                                 </>
 
                         }</Link>
-                        <Link className='mx-2' style={{ textDecoration: 'none' }} eventKey={2} to={`/`}>
-                            {
 
-                                user?.photoURL ?
-                                    <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
-                                    : <FaUser></FaUser>
+                        {['left'].map((placement) => (
+                            <OverlayTrigger
+                                key={placement}
+                                placement={placement}
+                                overlay={
+                                    user?.photoURL ?
 
-                            }
+                                        <Tooltip id={`tooltip-${placement}`}>
+                                            <span>{user?.displayName}</span>
+                                        </Tooltip> :
+                                        <></>
+
+                                }
+                            >
+                                <Link className='mx-2' style={{ textDecoration: 'none' }} eventKey={2} to={`/`}>
+                                    {
+
+                                        user?.photoURL ?
+                                            <Image style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
+                                            : <FaUser></FaUser>
+
+                                    }
+
+                                </Link>
+                            </OverlayTrigger>
+                        ))}
 
 
-                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

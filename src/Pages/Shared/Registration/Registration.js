@@ -7,12 +7,14 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { FaArrowCircleRight } from "react-icons/fa";
 
 
 const Registration = () => {
     const [error, setError] = useState('')
 
-    const { providerLogin, createUser } = useContext(AuthContext);
+    const { providerLogin, createUser, updateUserProfile } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider()
 
@@ -33,21 +35,31 @@ const Registration = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const photo = form.photoURL.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password)
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 setError('')
                 form.reset();
+                handleUpdateUserProfile(name, photoURL);
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
             })
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
     }
 
 
@@ -83,6 +95,9 @@ const Registration = () => {
 
             </Form>
 
+            <br />
+            <span><Link style={{ textDecoration: 'none' }} to='/login'>Already have an account? <FaArrowCircleRight></FaArrowCircleRight> </Link></span>
+            <br />
             <br />
 
             <div>
