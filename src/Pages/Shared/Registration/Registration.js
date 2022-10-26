@@ -6,9 +6,11 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 
 const Registration = () => {
+    const [error, setError] = useState('')
 
     const { providerLogin, createUser } = useContext(AuthContext);
 
@@ -39,9 +41,13 @@ const Registration = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                setError('')
                 form.reset();
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
 
@@ -72,7 +78,7 @@ const Registration = () => {
                     Registration Now
                 </Button>
                 <Form.Text className="text-danger">
-
+                    {error}
                 </Form.Text>
 
             </Form>
