@@ -34,7 +34,7 @@ const Header = () => {
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>Home</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/coursedetails/:id`}>Courses</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/faq`}>FAQ</Link>
-                        <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>Blogs</Link>
+                        <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/blogs`}>Blogs</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/registration`}>Registration</Link>
 
                     </Nav>

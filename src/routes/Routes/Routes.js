@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import Blogs from "../../Pages/Blogs/Blogs";
 import Checkout from "../../Pages/Checkout/Checkout";
 import Detailse from "../../Pages/Course-Detailse/Detailse";
 import Courses from "../../Pages/Courses/Course-home/Courses";
@@ -60,6 +61,11 @@ export const routes = createBrowserRouter([
                 element: <Faq></Faq>
 
             },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+
+            }
 
 
         ]
