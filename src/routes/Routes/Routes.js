@@ -8,6 +8,7 @@ import CourseHome from "../../Pages/Courses/Course-large/CourseHome";
 import Left from "../../Pages/Courses/Left-Side/Left";
 import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
+import NotFound from "../../Pages/NotFound/NotFound";
 import Login from "../../Pages/Shared/Login/Login";
 import Registration from "../../Pages/Shared/Registration/Registration";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
@@ -65,6 +66,11 @@ export const routes = createBrowserRouter([
                 path: '/blogs',
                 element: <Blogs></Blogs>
 
+            },
+
+            {
+                path: '*',
+                element: <NotFound></NotFound>
             }
 
 
