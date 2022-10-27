@@ -18,7 +18,7 @@ const Detailse = () => {
     const componentRef = useRef();
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
-        documentTitle: 'emp-data',
+        documentTitle: `${cour.name}`,
         onAfterPrint: () => alert('Downloaded')
 
     })
