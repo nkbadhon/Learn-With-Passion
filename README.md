@@ -1,6 +1,3 @@
-(client-side repo) Meaningful readme.md file containing your website name and link to your live site. And at least five bullet points mentioning your website's different features and functionality. And a list of technologies (frameworks, libraries) used in your project. (added a meaningful readme.md file for the server-side repo is optional)
-
-
 Assalamu alaikum. Welcome to my project.
 
 Project Name: Learn With Passion 
@@ -13,3 +10,11 @@ Features:
 3. After clicking on a particular course, it will ask for user login.
 4. You can login/register using email, google, github.
 5. In blog section you can get basic knowledge of web related things.
+
+Technologies used for this project:
+
+1. I have used React Bootstrap.
+2. I have used firebase.
+3. I have used fontawesome.
+4. I have used express js.
+5. I have used cors.
