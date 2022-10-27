@@ -10,7 +10,6 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Tooltip } from 'react-bootstrap';
-import ToggleButton from 'react-bootstrap/ToggleButton'
 
 const Header = () => {
     const { user, providerLogOut } = useContext(AuthContext);
@@ -34,7 +33,7 @@ const Header = () => {
                     <Nav className="me-auto ">
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>Home</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/coursedetails/:id`}>Courses</Link>
-                        <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>FAQ</Link>
+                        <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/faq`}>FAQ</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/`}>Blogs</Link>
                         <Link className='mx-2' style={{ textDecoration: 'none' }} to={`/registration`}>Registration</Link>
 

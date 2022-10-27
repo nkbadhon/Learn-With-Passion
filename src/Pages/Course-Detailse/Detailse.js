@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Detailse = () => {
     const cour = useLoaderData();
 
-    console.log(cour.id)
+    console.log(cour.id);
 
 
 

@@ -15,11 +15,20 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const githHubProvider = new GithubAuthProvider();
 
+
+
+    const [error, setError] = useState('')
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const handleGithubSignIn = () => {
         providerLogin(githHubProvider)
             .then(result => {
                 const user = result.user;
-
+                navigate(from, { replace: true })
                 console.log(user)
             })
             .catch(error => {
@@ -32,20 +41,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
             })
     }
-
-
-    const [error, setError] = useState('')
-
-
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();

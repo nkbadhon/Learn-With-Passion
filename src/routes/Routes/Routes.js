@@ -5,6 +5,7 @@ import Detailse from "../../Pages/Course-Detailse/Detailse";
 import Courses from "../../Pages/Courses/Course-home/Courses";
 import CourseHome from "../../Pages/Courses/Course-large/CourseHome";
 import Left from "../../Pages/Courses/Left-Side/Left";
+import Faq from "../../Pages/Faq/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Shared/Login/Login";
 import Registration from "../../Pages/Shared/Registration/Registration";
@@ -26,12 +27,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/course/:id',
                 element: <Courses></Courses>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-with-passion-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/detailse/:id',
                 element: <Detailse></Detailse>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-with-passion-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/coursedetails/:id',
@@ -41,7 +42,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <PrivetRoute><Checkout></Checkout></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://learn-with-passion-server.vercel.app/course/${params.id}`)
 
             },
             {
@@ -53,7 +54,12 @@ export const routes = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
 
-            }
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
+
+            },
 
 
         ]

@@ -9,7 +9,7 @@ import { Row, Col } from 'react-bootstrap';
 const Courses = () => {
     const [cat, setCat] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://learn-with-passion-server.vercel.app/course-categories')
             .then(res => res.json())
             .then(data => setCat(data));
 
