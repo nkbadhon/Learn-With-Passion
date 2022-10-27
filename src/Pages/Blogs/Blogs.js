@@ -5,7 +5,7 @@ const Blogs = () => {
     return (
         <Container>
             <div className='text-primary'>
-                <h4><strong>Question: </strong>what is cors?</h4>
+                <h4><strong>Question: </strong>What is cors?</h4>
                 <p> <strong>Answer: </strong>CORS is an acronym for Cross-Origin Resource Sharing, but what does that actually mean? What is CORS? Well, if we go by the Wikipedia definition, "[CORS] is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served," then you'd be forgiven if you were more confused than before you'd read that sentence.</p>
             </div>
             <div className='text-primary'>
@@ -22,8 +22,10 @@ const Blogs = () => {
                 <p> <strong>Answer: </strong>The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated</p>
             </div>
             <div className='text-primary'>
-                <h4><strong>Question: </strong></h4>
-                <p> <strong>Answer: </strong></p>
+                <h4><strong>Question: </strong>What is Node? How does Node work?</h4>
+                <p> <strong>Answer: </strong>Node.js is an open-source backend javascript runtime environment. It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node.js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.
+
+                    Working of Node.js: Node.js accepts the request from the clients and sends the response, while working with the request node.js handles them with a single thread. To operate I/O operations or requests node.js use the concept of threads. Thread is a sequence of instructions that the server needs to perform. It runs parallel on the server to provide the information to multiple clients. Node.js is an event loop single-threaded language. It can handle concurrent requests with a single thread without blocking it for one request.</p>
             </div>
         </Container>
     );
