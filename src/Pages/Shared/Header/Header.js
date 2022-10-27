@@ -49,8 +49,8 @@ const Header = () => {
                             </span>
                                 :
                                 <>
-                                    <Link to='/login'>Login</Link>
-                                    <Link to='/registration'>Registrer</Link>
+                                    <Link to='/login'><Button variant="info" onClick={handleLogOut}>Login</Button></Link>
+
                                 </>
 
                         }</Link>
